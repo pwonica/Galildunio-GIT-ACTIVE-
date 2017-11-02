@@ -22,6 +22,7 @@
  * @fileoverview Colour blocks for Blockly.
  * @author fraser@google.com (Neil Fraser)
  */
+/*
 'use strict';
 
 goog.provide('Blockly.Blocks.seriallcd');

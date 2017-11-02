@@ -71,7 +71,7 @@
         <table width="100%" height="100%">
             <tr>
                 <td>
-                    <img src="logo.gif">
+                    <img src="logo.png">
                     <div id="dialogShadow" class="dialogAnimate"></div>
                     <div id="dialogBorder"></div>
                     <div id="dialog"></div> 
@@ -125,6 +125,122 @@
         <textarea id="content_xml" class="content" wrap="off"></textarea>
 
     <xml id="toolbox" style="display: none">
+    <!-- CUSTOM XML WRITTEN BY PETER WONICA -->    
+        <category name="Components" colour="10">
+            <block type="servo_move" x="63" y="38">
+                    <field name="PIN">0</field>
+                    <value name="DEGREE">
+                        <block type="math_number">
+                            <field name="NUM">0</field>
+                        </block>
+                    </value>
+                    <value name="DELAY_TIME">
+                        <block type="math_number">
+                            <field name="NUM">0</field>
+                        </block>
+                    </value>
+            </block>
+            <block type="servo_read_degrees"></block>
+            <block type="grove_ultrasonic_ranger"></block>
+            <block type="inout_buildin_led"></block>
+            
+        </category>
+ 
+        <category name="Define Board Pins" colour="40">
+            <block type="inout_highlow"></block>
+            <block type="inout_digital_write"></block>
+            <block type="inout_digital_read"></block>
+            <block type="inout_analog_write" x="63" y="38">
+        </category>
+
+        <category name="Logic" colour="80">
+            <block type="arduino_setup"></block>
+            <block type="base_delayms">
+                <value name="DELAY_TIME">
+                    <block type="math_number" id="20">
+                        <field name="NUM">1000</field>
+                    </block>
+                </value>
+            </block>
+            <block type="controls_if"></block>
+            <block type="logic_compare"></block>
+            <block type="logic_operation"></block>
+            <block type="logic_boolean"></block>
+            <block type="logic_negate"></block>
+        </category>
+
+        <category name="Loops" colour="120">
+            <block type="while_do"></block>
+            <block type="do_while"></block>
+            <block type="cont_break"></block>
+
+            <block type="controls_for">
+                <value name="FROM">
+                    <block type="math_number">
+                        <field name="NUM">1</field>
+                    </block>
+                </value>
+                <value name="TO">
+                    <block type="math_number">
+                        <field name="NUM">10</field>
+                    </block>
+                </value>
+                <value name="BY">
+                    <block type="math_number">
+                        <field name="NUM">1</field>
+                    </block>
+                </value>
+            </block>
+
+            <block type="controls_repeat_x" x="113" y="38">
+                <value name="TIMES">
+                    <block type="math_number">
+                        <field name="NUM">10</field>
+                    </block>
+                </value>
+            </block>
+     
+     
+            
+            
+            
+            
+                
+                
+        </category>
+
+        <category name="Math" colour="160">
+            <block type="math_number"></block>
+            <block type="math_arithmetic"></block>
+            <block type="math_trig"></block>
+
+        </category>
+
+
+        <sep></sep>
+        <category id="catVariables" colour="330" custom="VARIABLE"></category>
+        <category id="catFunctions" colour="290" custom="PROCEDURE"></category>
+
+
+        <category name="Debugging" colour="260">
+            <block type="serial_printL" x="13" y="38">
+                <value name="CONTENT">
+                    <block type="text">
+                        <field name="TEXT"></field>
+                    </block>
+                </value>
+            </block>
+            <block type="serial_write" x="38" y="38">
+                <value name="CONTENT">
+                    <block type="text">
+                        <field name="TEXT"></field>
+                    </block>
+                </value>
+            </block>
+        </category>
+    </xml>
+            <!-- All XML is from the original version of Blockly Dunio -->    
+
         <category id="catInOut" colour="10">
             <category id="catDigital" colour="10">
                 <block type="inout_highlow"></block>
@@ -154,7 +270,7 @@
                 </value>
             </block>
             <block type="serial_read"></block>
-            <block type="serial_available"></block>
+           
             <block type="serial_print" x="13" y="13">
                 <value name="CONTENT">
                     <block type="text">
@@ -183,7 +299,7 @@
                     </block>
                 </value>
             </block>
-            <block type="serial_flush"></block>
+          
         </category>
         <category id="catSoftSerial" colour="50">
             <block type="soft_init"></block>
@@ -459,7 +575,7 @@
         <sep></sep>
         <category id="catVariables" colour="330" custom="VARIABLE"></category>
         <category id="catFunctions" colour="290" custom="PROCEDURE"></category>
-    </xml>
+    
 
     <div id="badBlockDiv" class="dialogHiddenContent">
         <table>

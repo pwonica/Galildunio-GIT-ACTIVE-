@@ -1,3 +1,4 @@
+/*
 'use strict';
 
 goog.provide('Blockly.Blocks.seriallcdi2c');

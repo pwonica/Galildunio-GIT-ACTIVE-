@@ -48,14 +48,13 @@ Blockly.Blocks['grove_ultrasonic_ranger'] = {
     this.setColour(150);
     this.appendDummyInput()
 	      .appendField(Blockly.Msg.ultrasonic_ranger)
-        .appendField(new Blockly.FieldImage("http://www.seeedstudio.com/wiki/images/thumb/b/b0/Twig_-_Ultrasonic_Ranger2.jpg/200px-Twig_-_Ultrasonic_Ranger2.jpg", 64, 64))
 	      .appendField(Blockly.Msg.TRIG)
         .appendField(new Blockly.FieldDropdown(profile.default.digital_2), "PIN_TRIG")
         .appendField(Blockly.Msg.Echo)
         .appendField(new Blockly.FieldDropdown(profile.default.digital_2), "PIN_ECHO");
 //        .appendField(new Blockly.FieldDropdown([["cm", "cm"],  ["inch", "inch"]]), "UNIT");
     this.setOutput(true, 'Number');
-    this.setTooltip('Non-contact distance measurement module');
+    this.setTooltip('Gives you the current distance measured from the ultrasonic sensor. Remember the sensor has two pins (TRIG, ECHO) that must be correctly set on the board');
   }
 };
 
@@ -87,7 +86,7 @@ Blockly.Blocks['base_delayms'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('Delay specific time in Ms');
+    this.setTooltip('Pause program in milliseconds. For example: Delay: 1000 = 1 second');
   }
 };
 
@@ -98,7 +97,7 @@ Blockly.Blocks['millis'] = {
       this.appendDummyInput()
           .appendField(Blockly.Msg.SinceProgramStarted);
     this.setOutput(true, 'Number');
-    this.setTooltip('Number of milliseconds since the program started (unsigned long)');
+    this.setTooltip('Gives you the number of milliseconds since the program started. Can used in timing. Example: As the time increases, the robot starts acting slow like they are tired');
   }
 };
 
@@ -114,7 +113,7 @@ Blockly.Blocks['var_random'] = {
         .appendField(Blockly.Msg.And);
     this.setInputsInline(true);
     this.setOutput(true);
-    this.setTooltip('');
+    this.setTooltip('Creates a random number between two numbers. Example: Create a random number for a variable and have a random delay or random servo position');
   }
 };
 

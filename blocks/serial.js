@@ -41,10 +41,11 @@ Blockly.Blocks['serial_printfor'] = {
     this.appendValueInput("CONTENT", 'Number')
         .setCheck('Number')
         .appendTitle(Blockly.Msg.Serial_Print_Format)
-     	.appendTitle(new Blockly.FieldDropdown([[Blockly.Msg.Serial_Print_ForDecimal, "DEC"],[Blockly.Msg.Serial_Print_ForHexa, "HEX"],[Blockly.Msg.Serial_Print_ForBin, "BIN"],[Blockly.Msg.Serial_Print_ForOct, "OCT"]]), "TYPE");
+        .appendTitle(Blockly.Msg.Serial_Print_ForDecimal, "DEC")
+     	//.appendTitle(new Blockly.FieldDropdown([[Blockly.Msg.Serial_Print_ForDecimal, "DEC"],[Blockly.Msg.Serial_Print_ForHexa, "HEX"],[Blockly.Msg.Serial_Print_ForBin, "BIN"],[Blockly.Msg.Serial_Print_ForOct, "OCT"]]), "TYPE");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('Prints data to the console/serial port with a specific format.');
+    this.setTooltip('Reads information from an input. For example, can read the distance measured by ultrasonic sensor and print that to Serial Monitor. Remember: need to access serial monitor through Ardunio Software to get real time update.');
   }
 };
 
@@ -80,7 +81,7 @@ Blockly.Blocks['serial_print'] = {
         .appendField(Blockly.Msg.Serial_Print);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('Prints data to the console/serial port as human-readable ASCII text.');
+    this.setTooltip('Prints text to the Serial Monitor. DOES NOT make a new line. Remember: need to access serial monitor through Ardunio Software.');
   }
 };
 
@@ -130,6 +131,6 @@ Blockly.Blocks['serial_printL'] = {
         .appendField(Blockly.Msg.Serial_PrintL);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('Prints data to the console/serial port as human-readable ASCII text.');
+    this.setTooltip('Prints a new line of text to the Serial Monitor. Remember: need to access serial monitor through Ardunio Software.');
   }
 };

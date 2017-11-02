@@ -43,7 +43,7 @@ Blockly.Blocks['inout_highlow'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([[Blockly.Msg.INOUT_HIGH_LEVEL, "HIGH"], [Blockly.Msg.INOUT_LOW_LEVEL, "LOW"]]), 'BOOL');
     this.setOutput(true, 'Boolean');
-    this.setTooltip('');
+    this.setTooltip('Sets a pin HIGH (ON) or LOW (OFF). Remember, pins can include leds and other components. For example, setting a LED on Pin 8 to high will make it turn on.');
   }
 }; 
 
@@ -56,7 +56,9 @@ Blockly.Blocks['inout_digital_read'] = {
 	      .appendField(Blockly.Msg.INOUT_DIG_READ)
 	      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
     this.setOutput(true, 'Number');
-    this.setTooltip('Reads the value from a specified digital pin, either HIGH or LOW');
+    var tooltipString = "Looks at a specific pin to see if it is HIGH (ON) or LOW (Off) This is useful if you need to know if something at a pin is on/off. For example, this can be used as part of an IF STATEMENT where you check if an LED is ON, and then do some other action (like move a servo)"
+    this.setTooltip(tooltipString); 
+           
   }
 };
 
@@ -86,7 +88,7 @@ Blockly.Blocks['inout_analog_write'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('');
+    this.setTooltip('This block sets a PIN that can be sent information in the form of a number. For example, the size of the number can define the brightness of an LED or how fast a simple DC motor spins');
   }
 };
 
@@ -99,7 +101,7 @@ Blockly.Blocks['inout_buildin_led'] = {
 	  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.INOUT_HIGH_LEVEL, "HIGH"], [Blockly.Msg.INOUT_LOW_LEVEL, "LOW"]]), "STAT");
      this.setPreviousStatement(true, null);
      this.setNextStatement(true, null);
-     this.setTooltip('light or off the build-in LED');
+     this.setTooltip('Controls the built in LED on the circuit board. Allows you to set the LED HIGH (ON) or LOW (OFF)');
    }
 };
 
@@ -114,6 +116,6 @@ Blockly.Blocks['inout_digital_write'] = {
       	.appendField(new Blockly.FieldDropdown([[Blockly.Msg.INOUT_HIGH_LEVEL, "HIGH"], [Blockly.Msg.INOUT_LOW_LEVEL, "LOW"]]), "STAT");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('Write digital value to a specific Port');
+    this.setTooltip('Tells a specific pin to turn HIGH (ON) or LOW (OFF)');
   }
 };

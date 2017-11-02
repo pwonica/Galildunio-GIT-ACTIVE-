@@ -22,7 +22,7 @@ Blockly.Blocks['servo_move'] = {
         .appendField(Blockly.Msg.Delay);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('I AM TOTALLY A SERVO MAKE ME WIGGLE AND DO STUFF');
+    this.setTooltip('Allows you to use a servo at a specific pin. Sets the servo to a position in degrees (0-180) and then delays your code by millseconds (Ex: Delay 1000 = 1 second)');
   }
 };
 
@@ -38,7 +38,7 @@ Blockly.Blocks['servo_read_degrees'] = {
     this.appendDummyInput()
         .appendField(Blockly.Msg.SERVO_ReadDegree);
     this.setOutput(true, "Number");
-    this.setTooltip('return that degree with the last servo move.');
+    this.setTooltip('Returns the position (in degrees) of a servo at a specific PIN. For example, if my servo is at this position, make the robot do something else.');
   }
 };
 

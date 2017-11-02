@@ -27,7 +27,7 @@
 goog.provide('Blockly.Blocks.advanced');
 
 goog.require('Blockly.Blocks');
-
+/*
 Blockly.Blocks['advanced_tone'] = {
   helpUrl: 'http://www.arduino.cc/en/Reference/Tone',
   init: function() {
@@ -44,6 +44,7 @@ Blockly.Blocks['advanced_tone'] = {
     this.setTooltip("Generate audio tones on a pin");
   }
 };
+
 
 Blockly.Blocks['advanced_tonedure'] = {
   helpUrl: 'http://www.arduino.cc/en/Reference/Tone',
@@ -78,7 +79,7 @@ Blockly.Blocks['advanced_notone'] = {
     this.setTooltip("Stops the generation of a square wave triggered by tone(). Has no effect if no tone is being generated. ");
   }
 };
-
+*/
 Blockly.Blocks['advanced_pulsein'] = {
   helpUrl: 'http://arduino.cc/en/Reference/pulseIn',
   init: function() {

@@ -46,7 +46,7 @@ Blockly.Blocks['math_number'] = {
         .appendField(new Blockly.FieldTextInput('0',
         Blockly.FieldTextInput.numberValidator), 'NUM');
     this.setOutput(true, 'Number');
-    this.setTooltip(Blockly.Msg.MATH_NUMBER_TOOLTIP);
+    this.setTooltip('Creates a number to use in the program');
   }
 };
 
@@ -73,6 +73,8 @@ Blockly.Blocks['math_arithmetic'] = {
     this.setInputsInline(true);
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
+    this.setTooltip('Gives you a number based on a math operation between two numbers, like adding or subtracting')
+    /*
     this.setTooltip(function() {
       var mode = thisBlock.getFieldValue('OP');
       var TOOLTIPS = {
@@ -84,6 +86,7 @@ Blockly.Blocks['math_arithmetic'] = {
       };
       return TOOLTIPS[mode];
     });
+    */
   }
 };
 
@@ -146,6 +149,8 @@ Blockly.Blocks['math_trig'] = {
         .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
+    
+    
     this.setTooltip(function() {
       var mode = thisBlock.getFieldValue('OP');
       var TOOLTIPS = {
@@ -157,6 +162,7 @@ Blockly.Blocks['math_trig'] = {
         'ATAN': Blockly.Msg.MATH_TRIG_TOOLTIP_ATAN
       };
       return TOOLTIPS[mode];
+      
     });
   }
 };

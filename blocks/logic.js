@@ -50,6 +50,9 @@ Blockly.Blocks['controls_if'] = {
                                          'controls_if_else']));
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
+
+    this.setTooltip('Creates an "if statement". Allows the program to say, "IF a certain value is true, then DO something". (Example: If the ultra sonic ranger senses an object closer than 100cm, then move the servo.')
+    /*
     this.setTooltip(function() {
       if (!thisBlock.elseifCount_ && !thisBlock.elseCount_) {
         return Blockly.Msg.CONTROLS_IF_TOOLTIP_1;
@@ -62,6 +65,7 @@ Blockly.Blocks['controls_if'] = {
       }
       return '';
     });
+    */
     this.elseifCount_ = 0;
     this.elseCount_ = 0;
   },

@@ -45,7 +45,7 @@ Blockly.Blocks['while_do'] = {
         .appendField(Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_WHILE);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('');
+    this.setTooltip('Tells the program to first DO something, then check to see if a condition is TRUE. Ff the condition is TRUE, then the program will repeat the DO something for as long as the condition is TRUE');
   }
 };
 
@@ -60,7 +60,7 @@ Blockly.Blocks['do_while'] = {
         .appendField(Blockly.Msg.CONTROLS_REPEAT_INPUT_DO);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('');
+    this.setTooltip('Tells the program to check the condition of something, if it returns TRUE, then DO something');
   }
 };
 
@@ -72,7 +72,7 @@ Blockly.Blocks['cont_break'] = {
         .appendField(Blockly.Msg.Break);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('');
+    this.setTooltip('Stops what is happening in a DO, FOR or WHILE loop. Useful if you want to stop a normal loop condition');
   }
  }; 
  
@@ -92,7 +92,7 @@ Blockly.Blocks['cont_break'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setInputsInline(true);
-    this.setTooltip(Blockly.Msg.CONTROLS_REPEAT_TOOLTIP);
+    this.setTooltip('Blockly.Msg.CONTROLS_REPEAT_TOOLTIP');
   }
 };
 
@@ -139,10 +139,13 @@ Blockly.Blocks['controls_for'] = {
         .appendField(Blockly.Msg.CONTROLS_FOR_INPUT_DO);
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
+    this.setTooltip('Loop with a predetermined beginning, end, and increment (what it does each time. This loop sets a variable to the FIRST NUMBER. It will do everything in the DO section and at the end, it will add the THIRD NUMBER to the original number. Once the FIRST NUMBER equals the THIRD, the loop will stop')
+    /*
     this.setTooltip(function() {
-      return Blockly.Msg.CONTROLS_FOR_TOOLTIP.replace('%1',
+      return Blockly.Msg.CONTROLS_FOR_TOOLTIP.replace(''%1'',
           thisBlock.getFieldValue('VAR'));
     });
+    */
   },
   /**
    * Return all variables referenced by this block.
@@ -205,6 +208,7 @@ Blockly.Blocks['controls_repeat_x'] = {
       "tooltip": Blockly.Msg.CONTROLS_REPEAT_TOOLTIP,
       "helpUrl": Blockly.Msg.CONTROLS_REPEAT_HELPURL
     });
+    this.setTooltip('Tells the program to DO something a specified number of times');
     this.appendStatementInput('DO')
         .appendField(Blockly.Msg.CONTROLS_REPEAT_INPUT_DO);
   }
@@ -218,7 +222,7 @@ Blockly.Blocks['cont_continue'] = {
         .appendField(Blockly.Msg.continue);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('');
+    this.setTooltip('Skips the rest of the current iteration of a loop DO, WHILE or FOR. It continues by checking the conditional expression of the loop and then proceeding with any subsequent iterations ');
   }
  }; 
  
