@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="google" value="notranslate">
-        <title>BlocklyDuino Enhanced</title>
+        <title>Ardunio Code Builder</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="common.css">
 
@@ -63,15 +63,31 @@
 
         <script src="dist/clipboard.min.js"></script>
 
+        
+        
+        
+
         <script src="code.js"></script>
         <script src="common.js"></script>
 
+    
+
+  
+
+
     </head>
     <body>
+        
+                    
+        
+    
         <table width="100%" height="100%">
-            <tr>
+            <!-- this below row is the main top row-->
+            <tr id = "topRow">
+                
                 <td>
-                    <h1>Gali-dunio!</h1>
+                    
+                    <img src="logo.png">
                     <div id="dialogShadow" class="dialogAnimate"></div>
                     <div id="dialogBorder"></div>
                     <div id="dialog"></div> 
@@ -80,6 +96,7 @@
                     <select id="languageMenu"></select>
                 </td>
             </tr>
+            
             <tr>
                 <td colspan=2>
                     <table width="100%">
@@ -88,20 +105,26 @@
                             <td class="tabmin">&nbsp;</td>
                             <td id="tab_arduino" class="taboff">Arduino</td>
                             <td class="tabmin">&nbsp;</td>
-                            <!--<td id="tab_xml" class="taboff">XML</td>-->
+                            <td id="tab_xml" class="taboff">XML</td>
                             <td class="tabmax">
+                                
                                 <button id="copyButton" class="btn1" data-clipboard-target="#fool">
                                     <img src='../../media/iconecopy.png' class="run icon21">
                                 </button>
+                                
                                 <button id="trashButton" class="notext" title="...">
                                     <img src='../../media/1x1.gif' class="trash icon21">
                                 </button>
+                                
                                 <button id="linkButton" class="notext" title="...">
                                     <img src='../../media/1x1.gif' class="link icon21">
                                 </button>
+                                <!--WARNING, If you delete the run button, it disrupts the UI -->
                                 <button id="runButton" class="notext primary" title="..." onclick="saveCode()">
                                     <img src='../../media/1x1.gif' class="run icon21">
                                 </button>
+                                <button onclick="save()" id="savexmlButton"><img src='../../media/SAVEXML.png' class="run icon21"></button>
+                                <button id="fakeload"><img src='../../media/loadxml.jpg' class="run icon21"></button>
                                 <input type="file" id="load" style="display: none;"/>
                             </td>
                         </tr>
@@ -111,6 +134,7 @@
             <tr>
                 <td height="99%" colspan=2 id="content_area">
                 </td>
+                
             </tr>
         </table>
         <div id="content_blocks" class="content"></div>
@@ -118,6 +142,122 @@
         <textarea id="content_xml" class="content" wrap="off"></textarea>
 
     <xml id="toolbox" style="display: none">
+    <!-- CUSTOM XML WRITTEN BY PETER WONICA -->    
+        <category name="Components" colour="10">
+            <block type="servo_move" x="63" y="38">
+                    <field name="PIN">0</field>
+                    <value name="DEGREE">
+                        <block type="math_number">
+                            <field name="NUM">0</field>
+                        </block>
+                    </value>
+                    <value name="DELAY_TIME">
+                        <block type="math_number">
+                            <field name="NUM">0</field>
+                        </block>
+                    </value>
+            </block>
+            <block type="servo_read_degrees"></block>
+            <block type="grove_ultrasonic_ranger"></block>
+            <block type="inout_buildin_led"></block>
+            
+        </category>
+ 
+        <category name="Define Board Pins" colour="40">
+            <block type="inout_highlow"></block>
+            <block type="inout_digital_write"></block>
+            <block type="inout_digital_read"></block>
+            <block type="inout_analog_write" x="63" y="38">
+        </category>
+
+        <category name="Logic" colour="80">
+            <block type="arduino_setup"></block>
+            <block type="base_delayms">
+                <value name="DELAY_TIME">
+                    <block type="math_number" id="20">
+                        <field name="NUM">1000</field>
+                    </block>
+                </value>
+            </block>
+            <block type="controls_if"></block>
+            <block type="logic_compare"></block>
+            <block type="logic_operation"></block>
+            <block type="logic_boolean"></block>
+            <block type="logic_negate"></block>
+        </category>
+
+        <category name="Loops" colour="120">
+            <block type="while_do"></block>
+            <block type="do_while"></block>
+            <block type="cont_break"></block>
+
+            <block type="controls_for">
+                <value name="FROM">
+                    <block type="math_number">
+                        <field name="NUM">1</field>
+                    </block>
+                </value>
+                <value name="TO">
+                    <block type="math_number">
+                        <field name="NUM">10</field>
+                    </block>
+                </value>
+                <value name="BY">
+                    <block type="math_number">
+                        <field name="NUM">1</field>
+                    </block>
+                </value>
+            </block>
+
+            <block type="controls_repeat_x" x="113" y="38">
+                <value name="TIMES">
+                    <block type="math_number">
+                        <field name="NUM">10</field>
+                    </block>
+                </value>
+            </block>
+     
+     
+            
+            
+            
+            
+                
+                
+        </category>
+
+        <category name="Math" colour="160">
+            <block type="math_number"></block>
+            <block type="math_arithmetic"></block>
+            <block type="math_trig"></block>
+
+        </category>
+
+
+        <sep></sep>
+        <category id="catVariables" colour="330" custom="VARIABLE"></category>
+        <category id="catFunctions" colour="290" custom="PROCEDURE"></category>
+
+
+        <category name="Debugging" colour="260">
+            <block type="serial_print" x="13" y="13">
+                <value name="CONTENT">
+                    <block type="text">
+                        <field name="TEXT"></field>
+                    </block>
+                </value>
+            </block>
+            <block type="serial_write" x="38" y="38">
+                <value name="CONTENT">
+                    <block type="text">
+                        <field name="TEXT"></field>
+                    </block>
+                </value>
+            </block>
+        </category>
+    </xml>
+            <!-- All XML is from the original version of Blockly Dunio -->    
+
         <category id="catInOut" colour="10">
             <category id="catDigital" colour="10">
                 <block type="inout_highlow"></block>
@@ -147,7 +287,7 @@
                 </value>
             </block>
             <block type="serial_read"></block>
-            <block type="serial_available"></block>
+           
             <block type="serial_print" x="13" y="13">
                 <value name="CONTENT">
                     <block type="text">
@@ -176,7 +316,7 @@
                     </block>
                 </value>
             </block>
-            <block type="serial_flush"></block>
+          
         </category>
         <category id="catSoftSerial" colour="50">
             <block type="soft_init"></block>
@@ -452,7 +592,7 @@
         <sep></sep>
         <category id="catVariables" colour="330" custom="VARIABLE"></category>
         <category id="catFunctions" colour="290" custom="PROCEDURE"></category>
-    </xml>
+    
 
     <div id="badBlockDiv" class="dialogHiddenContent">
         <table>
@@ -478,6 +618,8 @@
     </div>
 
 
+
+    
 
     <script type="text/javascript">  var loadInput = document.getElementById('load');
         loadInput.addEventListener('change', load, false);
@@ -529,10 +671,28 @@
         }
         code.workspace.addChangeListener(onchange);
         onchange();
+        </script>
+    
+    <script>
+        var colors = ['#dda0dd', '#ffa500', '#ED9EFE', '#FF9797', '#FF97E8', '#B89AFE', '#A27AFE', "#44B4D5", "#9588EC", "#BD5CFE", "#4BFE78", "#66FF00", "#FF7575"];
+        var whichColor = colors[Math.floor(Math.random() * colors.length)];
+        document.getElementById('topRow').style.backgroundColor= whichColor;
     </script>
+
+    <script>
+    //autosaver
+        
+        function AutoSave(){
+            saveCode();
+        }
+    </script>
+
     
     <p>
         <textarea id="fool" rows="4" cols="50"></textarea>
     </p>
 </body>
+
+
+
 </html>

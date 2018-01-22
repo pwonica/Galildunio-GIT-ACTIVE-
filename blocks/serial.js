@@ -81,7 +81,7 @@ Blockly.Blocks['serial_print'] = {
         .appendField(Blockly.Msg.Serial_Print);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('Prints text to the Serial Monitor. DOES NOT make a new line. Remember: need to access serial monitor through Ardunio Software.');
+    this.setTooltip('Prints text on a new line. Useful for debugging and troubleshooting');
   }
 };
 
